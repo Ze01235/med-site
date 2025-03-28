@@ -1,0 +1,282 @@
+@font-face {
+    font-family: 'Involve';
+    src: url('/fonts/involve/Involve-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Involve';
+    src: url('/fonts/involve/Involve-Medium.ttf') format('truetype');
+    font-weight: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 100px;
+    background: linear-gradient( 0deg, rgb(236,238,255) 0%, rgb(215,227,247) 26%, rgb(178,211,239) 64%, rgb(217,233,247) 84%, rgb(255,255,255) 100%);  
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+header{
+    width: 90vw;
+    background-color: rgb(42, 102, 154);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1728px;
+    font-family: 'Involve';
+    font-weight: bold;
+    min-height: 40px;
+}   
+
+header > nav > ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    height: 100%;
+    white-space: nowrap;
+    
+}
+header > nav > ul > a{
+    padding: 0 40px;
+    align-content: center;
+    font-size: 20px;   
+    color: #f1f1f1;
+    text-decoration: none;
+    font-family: 'Involve';
+    background-color: rgb(42, 102, 154);
+    white-space: nowrap;
+    outline: none;
+}
+header > nav > ul > a:hover{
+    background-color: rgb(203, 216, 227);
+    color: rgb(42, 102, 154);
+    transition: .3s;
+}
+
+header > nav > ul > #f{
+    background-color: rgb(203, 216, 227);
+    color: rgb(42, 102, 154);
+}
+
+header > .buttons{
+    display: flex;
+    height: 100%;
+}
+
+header > .buttons > button{
+    background-color: rgba(0,0,0,0);
+    border: none;
+    display: flex;
+    width: 40px;
+    align-items: center;
+    font-size: 20px;   
+    color: #f1f1f1;
+    font-weight: bold;
+    gap: 10px   ;
+    padding: 0 10px;
+    justify-content: center;
+    font-family: 'Involve';
+}
+header > .buttons > button:hover{
+    cursor: pointer;
+    background-color: rgb(203, 216, 227);
+    color: rgb(42, 102, 154);
+    transition: .3s;
+}
+#bell{
+    background-image: url('../images/icon-bell.png');
+    background-size: 56%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#arrow{
+    background-image: url('../images/icon-arrow.png');
+    background-size: 72%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#acc{
+    background-image: url('../images/icon-account.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#bell:hover{
+    background-image: url('../images/icons-bell-hover.png');
+    background-position: center;
+}
+#arrow:hover{
+    background-image: url('../images/icon-arrow-hover.png');
+    background-position: center;
+}
+#acc:hover{
+    background-image: url('../images/icon-account-hover.png');
+    background-position: center;
+}
+header > .buttons > #f{
+    width: fit-content;
+}
+header > .buttons > #f:hover > img{
+    filter: brightness(0) saturate(100%) invert(34%) sepia(65%) saturate(538%) hue-rotate(165deg) brightness(92%) contrast(91%);
+}
+main{
+    width: 90vw;
+    max-width: 1728px;  
+}
+.toolbar{
+    height: auto;
+    background-color: rgb(203, 216, 227);
+    padding: 50px;
+}
+.toolbar > form{
+    height: 52px;
+    display: flex;
+}
+.toolbar > form > input{
+    border: none;
+    color: rgb(203, 216, 227);
+    font-family: 'Involve';
+    font-size: 18px;
+    height: 100%;
+    width: 300px;
+    padding-left: 20px;
+    outline: none;
+}
+.toolbar > form > input::placeholder{
+    color: rgb(203, 216, 227);
+    font-size: 18px;
+    font-weight: bold;
+}
+.toolbar > form > button{
+    background-image: url('../images/icon-search.png');
+    background-color: rgb(42, 102, 154);
+    background-size: 56%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 52px;
+    border: none;
+}
+.toolbar > form > button:hover{
+    cursor: pointer;
+    background-image: url('../images/icon-search-hover.png');
+    transition: .3s;
+    background-color: rgb(255, 255, 255);
+}
+.attributes{
+    display: flex;
+    justify-content: space-between;
+ 
+}
+.attributes > p{
+    font-family: 'Involve';
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    color: #90b7d8;
+    box-sizing: border-box;
+}
+.attributes > #f{
+    width: 25%;
+    background: #f1f1f1;
+    padding-left: 50px;
+}
+.attributes > #s{
+    width: 20%;
+    background: #ffffff;
+}
+.attributes > #t{
+    width: 25%;
+    background: #f1f1f1;
+}
+.attributes > #fr{
+    width: 30%;
+    background: #ffffff;
+}
+.attributes > #ff{
+    width: 35%;
+    background: #f1f1f1;
+}
+.patients-list{
+    background: white;
+    width: 100%;
+    padding: 20px 0 30px 0;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+.patients-list::-webkit-scrollbar{
+    background-color: rgb(255, 255, 255);
+    width: 8px;
+}
+.patients-list::-webkit-scrollbar-thumb{
+    background-color: rgb(42, 102, 154);
+    border-radius: 10px;
+    height: 50px;
+}
+.patient{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    font-family: 'Involve';
+    font-weight: normal;
+    font-size: 18px;
+    color: #222324;
+    padding: 15px 49px;
+}
+.patient > p{
+    padding-left: 15px;
+}
+#oms{
+    max-width: 9ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.patient > #f{
+    width: 22%;
+    padding-left: 0;
+}
+.patient > #s{
+    width: 11%;
+}
+.patient > #t{
+    width: 13%;
+}
+.patient > #fr{
+    width: 20%;
+}
+.patient > #ff{
+    width: 31%;
+}
+.patient-card{
+    width: 40px; 
+    height: 100%;
+    background-color: rgb(42, 102, 154);
+    border: none;
+    background-image: url('../images/icon-document.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.patient-card:hover{
+    cursor: pointer;
+    transition: .3s;
+    background-color: rgb(255, 255, 255);
+    background-image: url('../images/icon-document-hover.png');
+}
+.line{
+    width: auto;
+    height: 2px;
+    background: black;
+    margin: 0 49px;
+}

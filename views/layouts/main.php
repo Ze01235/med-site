@@ -28,22 +28,22 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <header id="ae">
     <nav>
         <ul>
-            <a href="#" id="f">Реестр</a>
-            <a href="#">Расписание</a>
-            <a href="#">Чаты</a>
+            <?= Html::a('Реестр', ['/main/index']) ?>
+            <?= Html::a('Расписание', '/schedule/index') ?>
+            <?= Html::a('Чаты', '#') ?>
         </ul>
     </nav>
     <div class="buttons">
-        <button id="bell"></button>
-        <button id="arrow"></button>
-        <button id="f">
-            <p>Иван И.</p>
-            <?= Html::img('@web/images/icon-account.png', [
-                'width' => 27,
-                'height' => 27,
-                'alt' => 'Профиль'
-            ]) ?>
-        </button>
+<!--        <button id="bell"></button>-->
+<!--        <button id="arrow"></button>-->
+<!--        <button id="f">-->
+<!--            <p>Иван И.</p>-->
+<!--            --><?php //= Html::img('@web/images/icon-account.png', [
+//                'width' => 27,
+//                'height' => 27,
+//                'alt' => 'Профиль'
+//            ]) ?>
+<!--        </button>-->
     </div>
 </header>
 

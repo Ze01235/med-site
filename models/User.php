@@ -1,104 +1,52 @@
 <?php
-
 namespace app\models;
 
-class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
+use yii\web\IdentityInterface;
+use app\services\ApiService;
+
+class User implements IdentityInterface
 {
+    private static $users = [];
     public $id;
     public $username;
-    public $password;
     public $authKey;
     public $accessToken;
+    private $_sessionId;
 
-    private static $users = [
-        '100' => [
-            'id' => '100',
-            'username' => 'admin',
-            'password' => 'admin',
-            'authKey' => 'test100key',
-            'accessToken' => '100-token',
-        ],
-        '101' => [
-            'id' => '101',
-            'username' => 'demo',
-            'password' => 'demo',
-            'authKey' => 'test101key',
-            'accessToken' => '101-token',
-        ],
-    ];
+    public static function findIdentity($id) { /* ... */ }
 
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function findIdentity($id)
-    {
-        return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        foreach (self::$users as $user) {
-            if ($user['accessToken'] === $token) {
-                return new static($user);
-            }
+        $apiService = new ApiService();
+        try {
+            $sessionId = $apiService->getSession($token);
+            $user = new static();
+            $user->id = 1; // или другой идентификатор
+            $user->_sessionId = $sessionId;
+            return $user;
+        } catch (\Exception $e) {
+            return null;
         }
-
-        return null;
     }
 
-    /**
-     * Finds user by username
-     *
-     * @param string $username
-     * @return static|null
-     */
+    public function getId() { return $this->id; }
+    public function getAuthKey() { return $this->authKey; }
+    public function validateAuthKey($authKey) { return $this->authKey === $authKey; }
+
+    public function getSessionId()
+    {
+        return $this->_sessionId;
+    }
+
     public static function findByUsername($username)
     {
-        foreach (self::$users as $user) {
-            if (strcasecmp($user['username'], $username) === 0) {
-                return new static($user);
-            }
-        }
-
-        return null;
+        // Здесь можно добавить проверку пользователей в БД
+        return isset(self::$users[$username]) ? new static(self::$users[$username]) : null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getAuthKey()
-    {
-        return $this->authKey;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function validateAuthKey($authKey)
-    {
-        return $this->authKey === $authKey;
-    }
-
-    /**
-     * Validates password
-     *
-     * @param string $password password to validate
-     * @return bool if password provided is valid for current user
-     */
     public function validatePassword($password)
     {
-        return $this->password === $password;
+        // Здесь должна быть проверка пароля
+        return true; // Временно, пока нет БД пользователей
     }
 }

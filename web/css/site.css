@@ -280,3 +280,14 @@ main{
     background: black;
     margin: 0 49px;
 }
+
+.shedule{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Involve';
+    font-weight: normal;
+    font-size: 18px;
+    color: #222324;
+    padding: 15px 49px;
+}

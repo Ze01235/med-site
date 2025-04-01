@@ -22,6 +22,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+            'loginUrl' => ['main/login'],
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -31,6 +32,9 @@ $config = [
             'viewPath' => '@app/mail',
             // send all mails to a file by default.
             'useFileTransport' => true,
+        ],
+        'notifier' => [
+            'class' => 'app\components\Notifier',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -48,6 +52,7 @@ $config = [
             'rules' => [
                 'research/<guid>' => 'main/research',
                 '' => 'main/index',
+                'schedule' => 'schedule/index',
             ],
         ],
     ],

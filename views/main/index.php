@@ -46,20 +46,3 @@ $this->title = 'Лабораторные исследования';
         <?php endif; ?>
     </div>
 </section>
-
-
-<!--<h1>Исследования</h1>-->
-<!--<div class="researches-list">-->
-<!--    --><?php //foreach ($researches as $research): ?>
-<!--        <div class="research-card">-->
-<!--            <h3>-->
-<!--                <a href="--><?php //= Yii::$app->urlManager->createUrl(['main/research', 'guid' => $research['labDirectionGuid']]) ?><!--">-->
-<!--                    Исследование #--><?php //= Html::encode($research['number']) ?>
-<!--                </a>-->
-<!--            </h3>-->
-<!--            <p>Статус: --><?php //= Html::encode($research['status'] === 'completed' ? 'Завершено' : 'В процессе') ?><!--</p>-->
-<!--            <p>Лаборатория: --><?php //= Html::encode($research['laboratory']['name']) ?><!--</p>-->
-<!--            <p>Дата создания: --><?php //= Yii::$app->formatter->asDate($research['createDate']) ?><!--</p>-->
-<!--        </div>-->
-<!--    --><?php //endforeach; ?>
-<!--</div>-->

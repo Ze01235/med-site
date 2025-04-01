@@ -30,7 +30,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         <ul>
             <?= Html::a('Реестр', ['/main/index']) ?>
             <?= Html::a('Расписание', '/schedule/index') ?>
-            <?= Html::a('Чаты', '#') ?>
+<!--            --><?php //= Html::a('Чаты', '#') ?>
         </ul>
     </nav>
     <div class="buttons">

@@ -38,9 +38,8 @@ $this->title = 'Лабораторные исследования';
                 <div class="patient">
                     <p id="f"><?= Html::encode("{$patient['lastName']} {$patient['firstName']} {$patient['middleName']}") ?></p>
                     <p id="s"><?= Html::encode($patient['birthDate']) ?></p>
-                    <span id="fr"><p id="oms"><?= Html::encode($patient['oms']) ?></p></span>
-                    <p id="t"><?= Html::encode($patient['snils']) ?></p>
-                    <button class="patient-card"></button>
+                    <span id="t"><p id="oms"><?= Html::encode($patient['oms']) ?></p></span>
+                    <p id="fr"><?= Html::encode($patient['snils']) ?></p>
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>

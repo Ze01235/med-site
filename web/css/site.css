@@ -40,7 +40,7 @@ header > nav > ul{
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    width: 400px;
+
     height: 100%;
     white-space: nowrap;
     
@@ -175,7 +175,6 @@ main{
 .attributes{
     display: flex;
     justify-content: space-between;
- 
 }
 .attributes > p{
     font-family: 'Involve';
@@ -242,17 +241,17 @@ main{
     text-overflow: ellipsis;
 }
 .patient > #f{
-    width: 22%;
+    width: 25%;
     padding-left: 0;
 }
 .patient > #s{
-    width: 11%;
+    width: 20%;
 }
 .patient > #t{
-    width: 13%;
+    width: 30%;
 }
 .patient > #fr{
-    width: 20%;
+    width: 25%;
 }
 .patient > #ff{
     width: 31%;
@@ -290,4 +289,106 @@ main{
     font-size: 18px;
     color: #222324;
     padding: 15px 49px;
+}
+
+.shedule > p{
+    font-size: 1vw;
+}
+
+.shedule > #f{
+    width: 30%;
+    padding-left: 15px;
+}
+.shedule > #s{
+    width: 20%;
+    padding-left: 15px;
+}
+.shedule > #t{
+    width: 20%;
+    padding-left: 15px;
+}
+.shedule > #fr{
+    width: 20%;
+    padding-left: 15px;
+}
+
+@media (max-width: 770px) {
+    header{
+        width: 100%;
+    }
+    main{
+        width: 100%;
+    }
+    .attributes > #f{
+        width: 30%;
+    }
+    .attributes > #s{
+        width: 20%;
+    }
+    .attributes > #t{
+        width: 20%;
+    }
+    .patient > #f{
+        width: 35%;
+    }
+    .patient > #s{
+        width: 30%;
+    }
+    .patient > #t{
+        width: 30%;
+    }
+    .shedule > p{
+        font-size: 1.5vw;
+    }
+    .shedule{
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    header > nav > ul > a{
+        padding: 0 10px;
+    }
+    header{
+        width: 100%;
+    }
+    main{
+        width: 100%;
+    }
+    .attributes > #f{
+        width: 30%;
+    }
+    .attributes > #s{
+        width: 20%;
+    }
+    .attributes > #t{
+        width: 20%;
+    }
+    .attributes > p{
+        font-size: 3vw;
+    }
+    .patient > p, #t > p{
+        font-size: 2vw;
+    }
+    .patient{
+        padding: 15px 15px;
+    }
+    .shedule > p{
+        font-size: 2vw;
+    }
+    .shedule{
+        padding: 15px 10px;
+    }
+    .shedule > #f{
+        width: 30%;
+    }
+    .shedule > #s{
+        width: 20%;
+    }
+    .shedule > #t{
+        width: 20%;
+    }
+    .toolbar > form > input{
+        width: 200px;
+    }
 }

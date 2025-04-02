@@ -21,6 +21,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <head>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <script async src="https://script.click-chat.ru/chat.js?wid=88e05469-1fb7-4d06-a65b-d23333e82b39"></script>
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -30,7 +31,6 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         <ul>
             <?= Html::a('Реестр', ['/main/index']) ?>
             <?= Html::a('Расписание', '/schedule/index') ?>
-<!--            --><?php //= Html::a('Чаты', '#') ?>
         </ul>
     </nav>
     <div class="buttons">

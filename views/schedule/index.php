@@ -11,16 +11,16 @@ $this->title = 'Расписание исследований';
         <?php else: ?>
         <?php foreach ($schedule as $date => $events): ?>
             <div class="shedule">
-            <p>
+            <p id="f">
                 <?= Yii::$app->formatter->asDate($date, 'EEEE, d MMMM y') ?>
             </p>
             <?php foreach ($events as $event): ?>
-                <p>Время: <?= Html::encode($event['time']) ?></p>
+                <p id="s">Время: <?= Html::encode($event['time']) ?></p>
                 <?php if ($event['priority']): ?>
-                    <p>Приоритет: да</p>
+                    <p id="s">Приоритет: да</p>
                 <?php endif; ?>
-                <p><?= Html::encode($event['title']) ?></p>
-                <p><?= Html::encode($event['description']) ?></p>
+                <p id="t"><?= Html::encode($event['title']) ?></p>
+                <p id="fr"><?= Html::encode($event['description']) ?></p>
             <?php endforeach; ?>
             </div>
         <?php endforeach; ?>
